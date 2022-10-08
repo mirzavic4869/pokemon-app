@@ -5,7 +5,6 @@ const Search = (props) => {
 	const [search, setSearch] = useState("");
 	return (
 		<Container>
-			<h1>{search}</h1>
 			<Form className="mt-2">
 				<Row className="align-items-center">
 					<Col sm={10} className="my-1">
