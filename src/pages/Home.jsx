@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Search from "../components/Search";
 import { Row, Col } from "react-bootstrap";
+import PokemonData from "../components/PokemonData";
 
 const Home = () => {
 	const [pokemon, setPokemon] = useState("");
@@ -16,6 +17,7 @@ const Home = () => {
 			.then((results) => {
 				setPokemon(results);
 				setLoading(false);
+				console.log(results);
 			})
 			.catch((error) => console.log(error));
 	};
@@ -25,7 +27,7 @@ const Home = () => {
 			{!loading && pokemon ? (
 				<Row>
 					<Col>
-						<p>{pokemon.name}</p>
+						<PokemonData name={pokemon.name} sprite={pokemon.sprites.front_default} abilities={pokemon.abilities} height={pokemon.height} species={pokemon.species.name} stats={pokemon.stats} />
 					</Col>
 				</Row>
 			) : null}
