@@ -5,21 +5,6 @@ import CardAllPokemon from "./components/CardAllPokemon";
 import { Button } from "react-bootstrap";
 
 function App() {
-	// const [allPokemons, setAllPokemons] = useState([]);
-
-	// useEffect(() => {
-	// 	getAllPokemon();
-	// }, []);
-
-	// const getAllPokemon = async () => {
-	// 	await axios.get("https://pokeapi.co/api/v2/pokemon").then((response) => {
-	// 		const { results } = response.data;
-	// 		if (results) {
-	// 			setAllPokemons(results);
-	// 			console.log(results);
-	// 		}
-	// 	});
-	// };
 	const [allPokemons, setAllPokemons] = useState([]);
 	const [loadMore, setLoadMore] = useState("https://pokeapi.co/api/v2/pokemon?limit=20");
 
@@ -42,7 +27,7 @@ function App() {
 
 	useEffect(() => {
 		getAllPokemons();
-	}, []);
+	});
 	return (
 		<>
 			<div>
