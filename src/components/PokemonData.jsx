@@ -8,20 +8,20 @@ const PokemonData = (props) => {
 				<Col xs={12} md={6}>
 					<Card>
 						<Card.Header>
-							<h5>{props.name}</h5>
+							<h3>{props.name}</h3>
 							<img src={props.sprite} alt={props.name} />
 						</Card.Header>
 						<Card.Body>
-							<h5>Abilities</h5>
+							<h5 className="fst-italic">Abilities</h5>
 							{props.abilities.map((ability, key) => (
 								<div className="mb-2" key={key}>
 									<span>{ability.ability.name}</span>
 								</div>
 							))}
-							<h5>Height</h5>
+							<h5 className="fst-italic">Height</h5>
 							{props.height}
 
-							<h5>Species</h5>
+							<h5 className="fst-italic">Species</h5>
 							{props.species}
 						</Card.Body>
 					</Card>
@@ -32,7 +32,7 @@ const PokemonData = (props) => {
 							<h5>Base Stats</h5>
 							{props.stats.map((stat, key) => (
 								<div className="mb-1" key={key}>
-									<strong>{stat.stat.name}</strong>
+									<strong className="fst-italic">{stat.stat.name}</strong>
 									<ProgressBar now={stat.base_stat} max={250} label={stat.base_stat} />
 								</div>
 							))}
